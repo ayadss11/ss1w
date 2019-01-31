@@ -91,4 +91,4 @@ var duration = (upgradeTime * 1000)
 });
 
 
-client.login("token");
+client.login(process.env.TOKEN); 
