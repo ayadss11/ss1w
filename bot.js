@@ -1529,4 +1529,4 @@ client.on('message', message => {
  
  
 
-client.login('NDYyODg0OTMzODc5NDYzOTM2.DqX-tQ.9MDvAwvFs9uLjx-l8M4aLLwvZ2k');
+client.login(process.env.TOKEN); 
