@@ -79,16 +79,7 @@ msg.channel.send(`**Bot InviteURL : ** https://discordapp.com/oauth2/authorize?c
 
   
  
- client.on('message',async message => {
-  let mention = message.mentions.members.first();
-  let acRoom = client.channels.get('508692195583459338');
-  if(message.content.startsWith(prefix + "رفض")) {
-  if(message.guild.id !== '470478928947970048') return;
-  if(!message.guild.member(message.author).hasPermission("MANAGE_ROLES")) return;
-  if(!mention) return message.reply("منشن شخص");
-  acRoom.send(`**${mention} تم رفضك للاسف**`)
-  }
-});
+
  
  
  
