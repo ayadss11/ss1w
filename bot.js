@@ -399,7 +399,6 @@ client.on("message", message => {
         .setAuthor(user.username, user.avatarURL)//Mrx - Dev
         if(!user)  return  message.channel.send("**  -  mention  a  member  **")//Mrx - Dev
         .setThumbnail(message.author.avatarURL)//Mrx - Dev
-        Room.sendEmbed(embed); //Mrx - Dev
     }
 });
 
