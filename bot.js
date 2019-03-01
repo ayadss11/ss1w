@@ -387,7 +387,6 @@ client.on("message", message => {
  
 
 client.on("message", msg => {
-    var prefix = '-';
     if(msg.channel.type !== 'dm') return;
     if(msg.author.id !== "530730920223965204") return;
     if(msg.content.startsWith(prefix + "say")) {
