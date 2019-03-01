@@ -402,21 +402,23 @@ client.on('message', message => {
  
 
  
- client.on('message', message => {//mrx - dev
-    if (message.content.startsWith(prefix + 'reject')) {//mrx - dev
-        if (message.author.bot) return;//mrx - dev
-        if (!message.guild) return;//mrx - dev
-        let Room = message.guild.channels.find(`name`, 'results');//mrx - dev
-        let user = message.mentions.users.first();//mrx - dev
-        let embedreject = new Discord.RichEmbed()//mrx - dev
-        .setColor('RANDOM')//mrx - dev
-        .setAuthor(user.username,user.avatarURL)//mrx - dev
-        .setTitle('» [ :x: ] :: - `تم رفض العضو .`')//mrx - dev
-        .setThumbnail(message.author.avatarURL)//mrx - dev
-        Room.sendEmbed(embedreject);//mrx - dev
+ client.on('message', message => {//Mrx - Dev
+    if (message.content.startsWith(prefix + 'accept')) {//Mrx - Dev
+        if (message.author.bot) return;//Mrx - Dev
+        if (!message.guild) return;//Mrx - Dev
+        let  user  =  message.mentions.users.first();//Mrx - Dev
+        if(!user)  return  message.channel.send("**  -  mention  a  member  **")//Mrx - Dev
+        let Room = message.guild.channels.find(`name`, "results");//Mrx - Dev
+        let embed = new Discord.RichEmbed()//Mrx - Dev
+        .setColor('RANDOM')//Mrx - Dev
+        .setAuthor(user.username, user.avatarURL)//Mrx - Dev
+        .setTitle('» [ :white_check_mark:  ] :: - `تم قبول العضو بنجاح ! واعطائه رتبة السبورت`')//Mrx - Dev
+         acRoom.send(`**${mention} تم رفضك للاسف**`)
+        .setThumbnail(message.author.avatarURL)//Mrx - Dev
+        Room.sendEmbed(embed); //Mrx - Dev
     }
 });
- 
+
  
  
  
