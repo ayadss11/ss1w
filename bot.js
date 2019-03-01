@@ -153,7 +153,7 @@ if (message.content.startsWith(prefix + `!cat`)) {
   let mention = message.mentions.members.first();
   let acRoom = client.channels.get('483662159277064197');
   if(message.content.startsWith(prefix + "رفض")) {
-  if(message.guild.id !== '550617034602577920') return;
+  client.channels.get('550921168115335178') return;
   if(!message.guild.member(message.author).hasPermission("MANAGE_ROLES")) return;
   if(!mention) return message.reply("منشن شخص");
   acRoom.send(`**${mention} تم رفضك للاسف**`)
