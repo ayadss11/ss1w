@@ -386,21 +386,22 @@ client.on("message", message => {
  
  
 
- 
- client.on('message', message => {//Mrx - Dev
-    if (message.content.startsWith(prefix + 'accept')) {//Mrx - Dev
-        if (message.author.bot) return;//Mrx - Dev
-        if (!message.guild) return;//Mrx - Dev
-        let  user  =  message.mentions.users.first();//Mrx - Dev
-        if(!user)  return  message.channel.send("**  -  mention  a  member  **")//Mrx - Dev
-        let Room = message.guild.channels.find(`name`, "results");//Mrx - Dev
-        let embed = new Discord.RichEmbed()//Mrx - Dev
-        .setColor('RANDOM')//Mrx - Dev
-        .setAuthor(user.username, user.avatarURL)//Mrx - Dev
-          acRoom.send(`**${mention} تم رفضك للاسف**`)
-    }
-});
+client.on("message", msg => {
+    var prefix = '-';
+    if(msg.channel.type !== 'dm') return;
+    if(msg.author.id !== "530730920223965204") return;
+    if(msg.content.startsWith(prefix + "say")) {
+        let args = msg.content.slice(4);
+ let room = msg.mentions.channels.first();
+let text = args.replace(room, "");
+ if(!text) return msg.channel.send("❌ **الرجاء قم بكتابة النص**")
+ if(!room) return msg.channel.send("**I Can't Find RooM ❌**");
 
+        room.send(text)
+        .then(msg.channel.send(`**${room} تم ارسال في ✅ **`).then(m => m.delete(6000)));
+        }
+
+});
  
  
  
