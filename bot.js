@@ -412,7 +412,7 @@ client.on('message', message => {
         .setColor('RANDOM')//Mrx - Dev
         .setAuthor(user.username, user.avatarURL)//Mrx - Dev
         .setTitle('» [ :white_check_mark:  ] :: - `تم قبول العضو بنجاح ! واعطائه رتبة السبورت`')//Mrx - Dev
-         message.channel.send(`**${mention} تم رفضك للاسف**`)
+        if(!user)  return  message.channel.send("**  -  mention  a  member  **")//Mrx - Dev
         .setThumbnail(message.author.avatarURL)//Mrx - Dev
         Room.sendEmbed(embed); //Mrx - Dev
     }
