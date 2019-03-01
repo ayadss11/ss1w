@@ -387,7 +387,6 @@ client.on('message', message => {
       let user = message.mentions.users.first() || message.author
       let personalInvites = invs.filter(i => i.inviter.id === user.id);
       let inviteCount = personalInvites.reduce((p, v) => v.uses + p, 0);
-               let mmmmEmbed = new Discord.RichEmbed()
                          .setAuthor(client.user.username)
                          .setThumbnail(message.author.avatarURL)
  .addField(` لقد قمت بدعوة :`, ` ${inviteCount} `)
@@ -413,7 +412,7 @@ client.on('message', message => {
         .setColor('RANDOM')//Mrx - Dev
         .setAuthor(user.username, user.avatarURL)//Mrx - Dev
         .setTitle('» [ :white_check_mark:  ] :: - `تم قبول العضو بنجاح ! واعطائه رتبة السبورت`')//Mrx - Dev
-         acRoom.send(`**${mention} تم رفضك للاسف**`)
+         message.channel.send(`**${mention} تم رفضك للاسف**`)
         .setThumbnail(message.author.avatarURL)//Mrx - Dev
         Room.sendEmbed(embed); //Mrx - Dev
     }
