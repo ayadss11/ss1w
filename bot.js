@@ -403,7 +403,7 @@ client.on('message', message => {
 
  
  
- client.on('message', message => {//mrx - dev
+client.on('message', message => {//mrx - dev
     if (message.content.startsWith(prefix + 'reject')) {//mrx - dev
         if (message.author.bot) return;//mrx - dev
         if (!message.guild) return;//mrx - dev
@@ -413,10 +413,11 @@ client.on('message', message => {
         .setColor('RANDOM')//mrx - dev
         .setAuthor(user.username,user.avatarURL)//mrx - dev
         .setTitle('» [ :x: ] :: - `تم رفض العضو .`')//mrx - dev
+         message.channel.send('\`#\` <@'+ user.id + '>');
         .setThumbnail(message.author.avatarURL)//mrx - dev
+        Room.sendEmbed(embedreject);//mrx - dev
     }
 });
-
  
  
  
